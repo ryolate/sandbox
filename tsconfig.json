@@ -10,7 +10,7 @@
         "module": "commonjs",
         "target": "esnext",
         /* Defalut flags */
-        // "strict": true,
+        "strict": true,
         "esModuleInterop": true,
         "skipLibCheck": true,
         "forceConsistentCasingInFileNames": true
