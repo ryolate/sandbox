@@ -1,22 +1,6 @@
-const path = require('path');
+const { merge } = require('webpack-merge')
+const common = require('./webpack.common.js')
 
-module.exports = {
-    entry: './index.tsx',
-    output: {
-        path: path.resolve(__dirname, 'docs'),
-        filename: 'generated_app.js'
-    },
+module.exports = merge(common, {
     mode: "production",
-    module: {
-        rules: [
-            {
-                test: /\.tsx?$/,
-                loader: "ts-loader"
-            },
-            {
-                test: /\.css$/,
-                use: ["style-loader", "css-loader"]
-            }
-        ]
-    }
-}
+})
