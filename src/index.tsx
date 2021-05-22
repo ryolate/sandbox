@@ -23,12 +23,8 @@ function App() {
             <div>
                 <nav>
                     <ul>
-                        <li>
-                            <Link to="/">Home</Link>
-                        </li>
-                        <li>
-                            <Link to="/sandbox">Sandbox</Link>
-                        </li>
+                        <li><Link to="/">Home</Link></li>
+                        <li><Link to="/sandbox">Sandbox</Link></li>
                     </ul>
                 </nav>
 
