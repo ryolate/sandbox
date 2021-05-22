@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 
 export const Demo = () => {
     const names = [
@@ -22,6 +22,7 @@ export const Demo = () => {
             </tbody>
         </table>
         <TextAnimation />
+        <Circle />
     </>
 }
 
@@ -96,5 +97,45 @@ const TextAnimation = () => {
             setText(e.target.value)
         }} value={text} />
         <Animation text={text}></Animation>
+    </>
+}
+
+const Circle = () => {
+    const ref = useRef<HTMLCanvasElement>(null);
+
+    useEffect(() => {
+        const canvas = ref.current!;
+        const ctx = canvas.getContext('2d') as CanvasRenderingContext2D
+
+        let reqId: number;
+        let i = 0;
+        const render = () => {
+            const [w, h] = [canvas.width, canvas.height]
+            ctx.clearRect(0, 0, w, h)
+            ctx.fillStyle = '#333'
+            ctx.beginPath();
+            ctx.arc(
+                w / 2,
+                h / 2,
+                w / 2 * Math.abs(Math.cos(i)),
+                0,
+                2 * Math.PI
+            )
+            ctx.fill()
+            i += 0.05
+            reqId = requestAnimationFrame(render);
+        }
+        render()
+        return () => {
+            cancelAnimationFrame(reqId)
+        }
+    })
+
+    return <>
+        <canvas
+            height="150" width="150"
+            style={{ backgroundColor: "#ccc" }}
+            ref={ref}
+        />
     </>
 }
