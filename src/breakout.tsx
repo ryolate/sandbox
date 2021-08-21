@@ -214,7 +214,7 @@ export const App = () => {
         style={{ backgroundColor: "#eee" }}
     ></canvas >
         <div>
-            Use the keyboard to control: <b>J</b> to move left, <b>L</b> to move right
+            Keyboard control: <b>J</b> to move left, <b>L</b> to move right
         </div>
     </>
 }
