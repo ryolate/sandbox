@@ -18,6 +18,6 @@
   },
   "scripts": {
     "start": "webpack serve --config ./webpack.dev.js",
-    "build:prod": "webpack build --config ./webpack.prod.js"
+    "build": "webpack build --config ./webpack.prod.js"
   }
 }

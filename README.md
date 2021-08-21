@@ -1,3 +1,3 @@
-# NES
+# Sandbox
 
-Nes emulator.
+Experimental things.
